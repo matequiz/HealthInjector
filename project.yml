@@ -1,0 +1,30 @@
+name: HealthInjector
+options:
+  bundleIdPrefix: com.healthinjector
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  HealthInjector:
+    type: application
+    platform: iOS
+    sources:
+      - HealthInjector
+    info:
+      path: HealthInjector/Info.plist
+      properties:
+        CFBundleDisplayName: Health Injector
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSHealthShareUsageDescription: Ứng dụng cần đọc dữ liệu bước chân.
+        NSHealthUpdateUsageDescription: Ứng dụng cần ghi dữ liệu bước chân vào Apple Health.
+    entitlements:
+      path: HealthInjector/HealthInjector.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.healthinjector.HealthInjector
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
